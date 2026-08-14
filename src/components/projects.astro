@@ -1,3 +1,4 @@
+```astro
 <section
   id="projects"
   class="text-[var(--white)] py-24 md:py-36"
@@ -15,7 +16,7 @@
       ></div>
 
       <div class="relative">
-        <!-- Small status indicator -->
+        <!-- Status indicator -->
         <div class="mb-6 flex items-center justify-center gap-2">
           <span
             class="h-2 w-2 rounded-full bg-[var(--sec)]
@@ -23,8 +24,7 @@
           ></span>
 
           <span
-            class="text-sm tracking-widest uppercase
-            text-[var(--white-icon)]"
+            class="text-sm tracking-widest uppercase text-[var(--sec)] shiny-sec"
           >
             In progress
           </span>
@@ -48,8 +48,13 @@
         </p>
 
         <!-- Decorative line -->
-        <div class="mx-auto mt-8 h-px w-24 bg-[var(--sec)] opacity-60"></div>
+        <div
+          class="mx-auto mt-8 h-px w-24 bg-[var(--sec)] opacity-60"
+        ></div>
       </div>
     </div>
   </div>
 </section>
+```
+
+**Note:** This assumes your existing global `.shiny-sec` CSS is already available, as in the page you showed earlier. If it isn't global across this section, add your existing `.shiny-sec` styles to the page's `<style is:global>` block.
