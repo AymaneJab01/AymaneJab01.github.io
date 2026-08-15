@@ -14,42 +14,46 @@ const navItems: NavItem[] = [
   {
     label: "Projects",
     href: "#projects",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2 3 3 3H10.4142L12.4142 5Z"></path></svg>`,
   },
   {
     label: "Contact",
     href: "#contact",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>`,
   },
 ];
 ---
 
-<div class="flex justify-center w-full">
+<div class="flex w-full justify-center">
   <nav
     id="main-nav"
-    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)] border border-1 border-transparent backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+    class="fixed bottom-0 left-1/2 z-[100] w-[80%] -translate-x-1/2 border border-transparent bg-[var(--background)] backdrop-blur-xl transition-all duration-500 ease-in-out md:bottom-auto md:top-6"
   >
-    <div class="container mx-auto flex justify-center items-center p-3">
+    <div class="container mx-auto flex items-center justify-center p-3">
       <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
+        class="flex w-full items-center justify-between gap-6 md:w-auto md:justify-center md:gap-12"
       >
         {
           navItems.map((item) => (
             <li class="flex-1 md:flex-none">
               <a
                 href={item.href}
-                class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base relative group"
+                class="nav-link group relative flex flex-col items-center gap-1 text-xs text-[var(--white-icon)] transition-all duration-300 md:text-base"
               >
-                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[#A9FF5B] nav-indicator hidden md:block" />
+                {/* Desktop active indicator */}
+                <span class="nav-indicator pointer-events-none absolute -left-6 top-1/2 hidden h-2 w-2 -translate-y-1/2 scale-0 rounded-full bg-[#A9FF5B] opacity-0 shadow-[0_0_0_rgba(169,255,91,0)] transition-all duration-300 md:block"></span>
 
-                <span class="md:hidden flex items-center justify-center w-6 h-6">
+                {/* Mobile icon */}
+                <span class="flex h-6 w-6 items-center justify-center md:hidden">
                   <fragment set:html={item.icon} />
                 </span>
 
+                {/* Desktop label */}
                 <span class="hidden md:inline-block">
                   {item.label}
                 </span>
 
+                {/* Mobile label */}
                 <span class="md:hidden">
                   {item.label}
                 </span>
@@ -65,12 +69,19 @@ const navItems: NavItem[] = [
 <style>
   nav {
     transform: translateX(-50%);
+
     background-color: var(--background);
+
     transition:
       background-color 0.3s ease,
       border-radius 0.3s ease,
-      border-color 0.3s ease;
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
+
+  /* =========================================================
+     SCROLLED NAV
+  ========================================================== */
 
   nav.scrolling {
     background-color: var(--component-bg);
@@ -78,22 +89,56 @@ const navItems: NavItem[] = [
     border-radius: 9999px;
   }
 
-  nav a.active .nav-indicator {
-    transform: translateY(-50%) scale(1);
-    opacity: 1;
+  /* =========================================================
+     NAV LINKS
+  ========================================================== */
+
+  .nav-link {
+    position: relative;
   }
+
+  .nav-link:hover {
+    color: white;
+  }
+
+  /* =========================================================
+     ACTIVE LINK
+  ========================================================== */
 
   nav a.active {
     color: white !important;
   }
 
+  nav a.active .nav-indicator {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+
+    background-color: #a9ff5b;
+
+    box-shadow:
+      0 0 5px rgba(169, 255, 91, 0.9),
+      0 0 12px rgba(169, 255, 91, 0.75),
+      0 0 22px rgba(169, 255, 91, 0.35);
+  }
+
+  /* Slight glow on the active text */
+  nav a.active {
+    text-shadow: 0 0 18px rgba(169, 255, 91, 0.12);
+  }
+
+  /* =========================================================
+     MOBILE
+  ========================================================== */
+
   @media (max-width: 767px) {
     nav {
       width: 100% !important;
-      transform: translateX(-50%);
-      bottom: 0;
       left: 50%;
-      position: fixed;
+      bottom: 0;
+      top: auto;
+
+      transform: translateX(-50%);
+
       border-radius: 1rem 1rem 0 0;
       border-color: #ffffff10;
     }
@@ -106,32 +151,107 @@ const navItems: NavItem[] = [
     body {
       padding-bottom: 70px;
     }
+
+    /*
+     * Mobile active state.
+     *
+     * Since the desktop dot is hidden on mobile,
+     * we create a small green glow underneath
+     * the active mobile item.
+     */
+    nav a.active::after {
+      content: "";
+
+      position: absolute;
+      bottom: -7px;
+      left: 50%;
+
+      width: 5px;
+      height: 5px;
+
+      transform: translateX(-50%);
+
+      border-radius: 9999px;
+
+      background: #a9ff5b;
+
+      box-shadow:
+        0 0 5px rgba(169, 255, 91, 0.95),
+        0 0 12px rgba(169, 255, 91, 0.8),
+        0 0 22px rgba(169, 255, 91, 0.4);
+
+      animation: activeDotGlow 2s ease-in-out infinite;
+    }
+  }
+
+  @keyframes activeDotGlow {
+    0%,
+    100% {
+      opacity: 0.75;
+      transform: translateX(-50%) scale(0.9);
+    }
+
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.15);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    nav,
+    .nav-link,
+    .nav-indicator {
+      transition: none;
+    }
+
+    nav a.active::after {
+      animation: none;
+    }
   }
 </style>
 
 <script>
   const nav = document.getElementById("main-nav");
+
   const maxScroll = 1000;
+
   let rafId: number | null = null;
 
-  function updateNav() {
-    if (window.scrollY > 0) {
-      nav?.classList.add("scrolling");
+  /* =========================================================
+     NAV SCROLL EFFECT
+  ========================================================== */
 
-      const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
-      const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
+  function updateNav() {
+    if (!nav) return;
+
+    if (window.scrollY > 0) {
+      nav.classList.add("scrolling");
+
+      const scrollProgress = Math.min(
+        window.scrollY / maxScroll,
+        1
+      );
+
+      const easeProgress =
+        1 - Math.pow(1 - scrollProgress, 4);
 
       const minWidth = 528;
       const maxWidth = window.innerWidth * 0.8;
+
       const currentWidth =
-        maxWidth - (maxWidth - minWidth) * easeProgress;
+        maxWidth -
+        (maxWidth - minWidth) * easeProgress;
 
       if (window.innerWidth >= 768) {
-        nav?.style.setProperty("width", `${currentWidth}px`);
+        nav.style.setProperty(
+          "width",
+          `${currentWidth}px`
+        );
       }
     } else {
-      nav?.classList.remove("scrolling");
-      nav?.style.setProperty("width", "80%");
+      nav.classList.remove("scrolling");
+
+      nav.style.setProperty("width", "80%");
     }
 
     rafId = null;
@@ -147,73 +267,137 @@ const navItems: NavItem[] = [
     { passive: true }
   );
 
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+  /* Run once immediately */
+  updateNav();
 
-      const target = e.currentTarget as HTMLAnchorElement;
+  /* =========================================================
+     SMOOTH SCROLL
+  ========================================================== */
+
+  const anchors =
+    document.querySelectorAll<HTMLAnchorElement>(
+      'a[href^="#"]'
+    );
+
+  anchors.forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      event.preventDefault();
+
       const targetId =
-        target.getAttribute("href")?.substring(1) || "";
+        anchor.getAttribute("href")?.substring(1) || "";
 
-      const targetElement = document.getElementById(targetId);
+      const targetElement =
+        document.getElementById(targetId);
 
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
+      if (!targetElement) return;
+
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav a[href^='#']");
+  /* =========================================================
+     ACTIVE SECTION
+  ========================================================== */
 
-    const observerOptions: IntersectionObserverInit = {
-      threshold: 0.6,
-    };
+  function setupSectionObserver() {
+    const sections =
+      document.querySelectorAll<HTMLElement>(
+        "section[id]"
+      );
 
-    const observerCallback = (
-      entries: IntersectionObserverEntry[]
-    ) => {
-      entries.forEach((entry: IntersectionObserverEntry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-          });
+    const navLinks =
+      document.querySelectorAll<HTMLAnchorElement>(
+        'nav a[href^="#"]'
+      );
 
-          const id = entry.target.getAttribute("id");
+    if (!sections.length || !navLinks.length) {
+      return;
+    }
 
-          const activeLink = document.querySelector(
-            `nav a[href="#${id}"]`
-          );
-
-          if (activeLink) {
-            activeLink.classList.add("active");
-          }
-        }
+    function setActiveSection(id: string) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
       });
-    };
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
+      const activeLink =
+        document.querySelector<HTMLAnchorElement>(
+          `nav a[href="#${id}"]`
+        );
+
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
+    }
+
+    /*
+     * IMPORTANT:
+     * Set Home active immediately when we're
+     * at the top of the page.
+     */
+    if (window.scrollY < 100) {
+      setActiveSection("home");
+    }
+
+    /*
+     * rootMargin makes section detection feel
+     * much more natural than threshold: 0.6.
+     */
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          const visibleSections = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort(
+              (a, b) =>
+                b.intersectionRatio -
+                a.intersectionRatio
+            );
+
+          if (visibleSections.length > 0) {
+            const id =
+              visibleSections[0].target.getAttribute(
+                "id"
+              );
+
+            if (id) {
+              setActiveSection(id);
+            }
+          }
+        },
+        {
+          threshold: [0.15, 0.3, 0.5],
+          rootMargin: "-20% 0px -45% 0px",
+        }
+      );
 
     sections.forEach((section) => {
       observer.observe(section);
     });
-  });
+
+    /*
+     * Keep Home active when returning to the very top.
+     */
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+      }
+    };
+
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      { passive: true }
+    );
+  }
+
+  /*
+   * Do NOT depend on DOMContentLoaded.
+   *
+   * Astro can execute this script after
+   * DOMContentLoaded has already happened.
+   */
+  setupSectionObserver();
 </script>
-
-<style>
-  @media (max-width: 767px) {
-    body {
-      padding-bottom: 70px;
-    }
-  }
-
-  nav a.active {
-    color: white !important;
-  }
-</style>
