@@ -6,98 +6,111 @@ import SkillsList from "../React/SkillsList.tsx";
 
 <section
   id="home"
-  class="relative overflow-hidden text-[var(--white)]"
+  class="relative isolate overflow-hidden text-[var(--white)]"
 >
-  <!-- ========================================================= -->
-  <!-- AMBIENT BACKGROUND -->
-  <!-- ========================================================= -->
-
-  <div class="pointer-events-none absolute inset-0 -z-10">
+  <!-- =========================================================
+       BACKGROUND
+  ========================================================== -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- Main purple glow -->
     <div
-      class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#3212b8]/10 blur-[140px] sm:h-[600px] sm:w-[700px]"
+      class="absolute left-[42%] top-[-180px] h-[650px] w-[650px] -translate-x-1/2 rounded-full bg-[#3212b8]/20 blur-[150px]"
     ></div>
 
+    <!-- Secondary glow -->
     <div
-      class="absolute right-[-200px] top-[35%] h-[300px] w-[300px] rounded-full bg-[#172c9e]/10 blur-[120px] sm:h-[400px] sm:w-[400px]"
+      class="absolute right-[-180px] top-[30%] h-[500px] w-[500px] rounded-full bg-[#172c9e]/15 blur-[140px]"
     ></div>
 
-    <div class="absolute inset-0 hero-grid opacity-30"></div>
+    <!-- Bottom glow -->
+    <div
+      class="absolute bottom-[-250px] left-[10%] h-[500px] w-[700px] rounded-full bg-[#3212b8]/10 blur-[160px]"
+    ></div>
+
+    <!-- Grid -->
+    <div class="hero-grid absolute inset-0 opacity-40"></div>
+
+    <!-- Vignette -->
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,.35)_100%)]"
+    ></div>
   </div>
 
-  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-    <!-- ========================================================= -->
-    <!-- HERO -->
-    <!-- ========================================================= -->
-
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
     <div
-      class="grid min-h-[auto] items-center gap-14 py-20 sm:py-24 lg:min-h-[720px] lg:grid-cols-[1.15fr_.85fr] lg:gap-14 lg:py-28"
+      class="grid min-h-[760px] items-center gap-16 py-24 sm:py-28 lg:grid-cols-[1.08fr_.92fr] lg:gap-20 lg:py-32"
     >
 
       <!-- LEFT -->
-      <div class="relative z-10 min-w-0">
+      <div class="relative z-10">
 
-        <!-- STATUS -->
+        <!-- Availability badge -->
         <div
-          class="mb-7 inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--white-icon-tr)] bg-white/[0.035] px-3.5 py-2 text-sm leading-none text-[var(--white-icon)] backdrop-blur-md"
+          class="hero-fade mb-8 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.045] px-4 py-2 text-sm text-white/60 shadow-[0_0_30px_rgba(67,35,180,.08)] backdrop-blur-xl"
         >
-          <span class="relative flex h-2 w-2 shrink-0">
+          <span class="relative flex h-2 w-2">
             <span
               class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
             ></span>
 
             <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
+              class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,.7)]"
             ></span>
           </span>
 
           <span>Open to opportunities</span>
         </div>
 
-        <!-- INTRO -->
+        <!-- Intro -->
         <p
-          class="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--white-icon)] sm:text-sm sm:tracking-[0.25em]"
+          class="hero-fade mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-white/40 sm:text-sm"
         >
-          Hi, I'm
-          <span class="name-glow">Aymane Jabrane</span>
+          Hi, I'm Aymane Jabrane
         </p>
 
-        <!-- TITLE -->
+        <!-- Main heading -->
         <h1
-          class="max-w-4xl text-[3.4rem] font-semibold leading-[0.94] tracking-[-0.055em] sm:text-7xl lg:text-[5.8rem]"
+          class="hero-fade max-w-5xl text-[3.7rem] font-semibold leading-[0.91] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[6.6rem]"
         >
           Software
-          <span class="block text-white/50">Developer.</span>
+          <span
+            class="hero-gradient block bg-gradient-to-r from-white via-white/75 to-white/30 bg-clip-text text-transparent"
+          >Developer.</span>
         </h1>
 
-        <!-- DESCRIPTION -->
+        <!-- Description -->
         <p
-          class="mt-7 max-w-xl text-base leading-[1.65] text-[var(--white-icon)] sm:text-lg sm:leading-[1.65] lg:text-xl"
+          class="hero-fade mt-8 max-w-2xl text-base leading-8 text-white/45 sm:text-lg sm:leading-8"
         >
-          Building a
-          <span class="shiny-sec font-medium">
-            computer science
-          </span>
-          journey through code, systems and creative ideas.
+          Building a <span class="shiny-sec font-medium">computer science</span> journey through code, systems and creative ideas.
+          <span class="block">I enjoy turning complex problems into simple, useful software.</span>
         </p>
 
-        <!-- CTA / SOCIALS -->
+        <!-- CTA -->
         <div
-          class="mt-8 flex flex-wrap items-center gap-3 sm:mt-9"
+          class="hero-fade mt-10 flex flex-wrap items-center gap-4"
         >
 
-          <!-- VIEW WORK -->
+          <!-- Primary CTA -->
           <a
             href="#projects"
-            class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-medium leading-none text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+            class="group relative inline-flex items-center gap-3 overflow-hidden rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black shadow-[0_10px_40px_rgba(0,0,0,.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_45px_rgba(255,255,255,.12)]"
           >
-            <span>View my work</span>
+            <span
+              class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/[0.06] to-transparent transition-transform duration-700 group-hover:translate-x-full"
+            ></span>
+
+            <span class="relative">View my work</span>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              class="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+              class="relative size-4 transition-transform duration-300 group-hover:translate-x-1"
             >
               <path
                 fill-rule="evenodd"
@@ -107,10 +120,10 @@ import SkillsList from "../React/SkillsList.tsx";
             </svg>
           </a>
 
-          <!-- SOCIALS -->
+          <!-- Socials -->
           <div class="flex items-center gap-2">
 
-            <!-- GITHUB -->
+            <!-- GitHub -->
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -122,7 +135,7 @@ import SkillsList from "../React/SkillsList.tsx";
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-5"
+                class="size-[18px]"
               >
                 <path
                   d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
@@ -130,7 +143,7 @@ import SkillsList from "../React/SkillsList.tsx";
               </svg>
             </a>
 
-            <!-- LINKEDIN -->
+            <!-- LinkedIn -->
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -142,7 +155,7 @@ import SkillsList from "../React/SkillsList.tsx";
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-5"
+                class="size-[18px]"
               >
                 <path
                   d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"
@@ -150,7 +163,7 @@ import SkillsList from "../React/SkillsList.tsx";
               </svg>
             </a>
 
-            <!-- EMAIL -->
+            <!-- Email -->
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -162,41 +175,92 @@ import SkillsList from "../React/SkillsList.tsx";
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-5"
+                class="size-[18px]"
               >
                 <path
-                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
+                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a1.999 1.999 0 0 0-3.27-1.64"
                 />
               </svg>
             </a>
 
           </div>
         </div>
+
+        <!-- Small stats -->
+        <div
+          class="hero-fade mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/[0.07] pt-7"
+        >
+          <div>
+            <p class="text-xl font-semibold text-white">Code</p>
+            <p
+              class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30"
+            >
+              Build & ship
+            </p>
+          </div>
+
+          <div class="h-8 w-px bg-white/10"></div>
+
+          <div>
+            <p class="text-xl font-semibold text-white">Systems</p>
+            <p
+              class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30"
+            >
+              Think deeper
+            </p>
+          </div>
+
+          <div class="h-8 w-px bg-white/10"></div>
+
+          <div>
+            <p class="text-xl font-semibold text-white">Ideas</p>
+            <p
+              class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30"
+            >
+              Create freely
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- ========================================================= -->
-      <!-- RIGHT / GLITCH -->
-      <!-- ========================================================= -->
-
+      <!-- =======================================================
+           RIGHT / GLITCH
+      ======================================================== -->
       <div
         class="relative flex items-center justify-center lg:justify-end"
       >
-
-        <!-- GLOW -->
+        <!-- Glow -->
         <div
-          class="absolute h-[220px] w-[220px] rounded-full bg-[#3212b8]/20 blur-[100px] sm:h-[280px] sm:w-[280px]"
+          class="absolute h-[350px] w-[350px] rounded-full bg-[#3212b8]/25 blur-[120px]"
         ></div>
 
-        <!-- CARD -->
+        <!-- Decorative orbit -->
         <div
-          class="relative aspect-square w-full max-w-[330px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.025] p-2 shadow-2xl shadow-black/30 backdrop-blur-sm sm:max-w-[390px]"
-        >
+          class="absolute h-[440px] w-[440px] rounded-full border border-white/[0.035]"
+        ></div>
 
+        <div
+          class="absolute h-[520px] w-[520px] rounded-full border border-white/[0.02]"
+        ></div>
+
+        <!-- Main card -->
+        <div
+          class="glitch-card relative aspect-square w-full max-w-[430px] overflow-hidden rounded-[2rem] border border-white/[0.11] bg-white/[0.025] p-2 shadow-[0_30px_100px_rgba(0,0,0,.45)] backdrop-blur-sm"
+        >
+          <!-- Inner border -->
           <div
-            class="absolute inset-0 rounded-[1.5rem] border border-white/[0.06]"
+            class="pointer-events-none absolute inset-2 z-20 rounded-[1.65rem] border border-white/[0.07]"
           ></div>
 
-          <div class="h-full w-full overflow-hidden rounded-[1.5rem]">
+          <!-- Top gradient -->
+          <div
+            class="pointer-events-none absolute left-8 right-8 top-0 z-30 h-px bg-gradient-to-r from-transparent via-purple-400/60 to-transparent"
+          ></div>
+
+          <!-- Glitch -->
+          <div
+            class="relative h-full w-full overflow-hidden rounded-[1.7rem]"
+          >
             <LetterGlitch
               client:load
               glitchColors={["#270d6d", "#1f0b81", "#241a38"]}
@@ -205,351 +269,260 @@ import SkillsList from "../React/SkillsList.tsx";
               outerVignette={true}
               smooth={true}
             />
+
+            <!-- Overlay -->
+            <div
+              class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-white/[0.03]"
+            ></div>
           </div>
 
-          <!-- LABEL -->
+          <!-- Corner label -->
           <div
-            class="absolute bottom-4 left-4 rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 text-xs font-mono leading-none text-white/50 backdrop-blur-md sm:bottom-5 sm:left-5"
+            class="absolute bottom-6 left-6 z-30 rounded-lg border border-white/10 bg-black/45 px-3 py-2 text-[10px] font-mono uppercase tracking-[0.2em] text-white/45 backdrop-blur-xl"
           >
-            {"< build />"}
+            &lt; build /&gt;
+          </div>
+
+          <!-- Top-right status -->
+          <div
+            class="absolute right-6 top-6 z-30 flex items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.15em] text-white/40 backdrop-blur-xl"
+          >
+            <span
+              class="h-1.5 w-1.5 rounded-full bg-purple-400"
+            ></span>
+            online
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- TECHNOLOGIES -->
-    <!-- ========================================================= -->
+    <!-- =========================================================
+         TECHNOLOGIES
+    ========================================================== -->
+    <div class="relative border-y border-white/[0.07] py-12">
 
-    <div class="border-y border-white/[0.06] py-10 sm:py-12">
+      <!-- Background glow -->
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-32 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/[0.04] blur-3xl"
+      ></div>
 
-      <p
-        class="mb-7 text-center text-[10px] font-medium uppercase leading-none tracking-[0.22em] text-white/30 sm:text-xs sm:tracking-[0.25em]"
-      >
-        Technologies I work with
-      </p>
+      <div class="relative">
 
-      <LogoWall />
+        <div
+          class="mb-8 flex flex-col items-center justify-between gap-3 sm:flex-row"
+        >
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-white/30"
+          >
+            Technologies I work with
+          </p>
+
+          <span class="hidden text-xs text-white/20 sm:block">
+            Tools for turning ideas into software
+          </span>
+        </div>
+
+        <LogoWall />
+      </div>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- SKILLS -->
-    <!-- ========================================================= -->
-
+    <!-- =========================================================
+         SKILLS
+    ========================================================== -->
     <div
-      class="grid items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1fr_auto]"
+      class="relative grid gap-14 py-28 lg:grid-cols-[.8fr_1.2fr] lg:items-start lg:gap-20"
     >
 
-      <div class="min-w-0">
+      <!-- Decorative vertical line -->
+      <div
+        class="pointer-events-none absolute left-0 top-20 hidden h-[calc(100%-10rem)] w-px bg-gradient-to-b from-purple-500/40 via-white/10 to-transparent lg:block"
+      ></div>
 
-        <p
-          class="mb-3 text-xs font-medium uppercase leading-none tracking-[0.18em] text-[var(--sec)] sm:text-sm sm:tracking-[0.2em]"
+      <!-- Left -->
+      <div class="lg:pl-8">
+
+        <div
+          class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-purple-300/70"
         >
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-purple-400"
+          ></span>
           Skills & tools
-        </p>
+        </div>
 
         <h2
-          class="max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl"
+          class="max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl"
         >
-          <span class="whitespace-nowrap">Turning ideas into</span>
-
-          <span class="block text-white/40">
-            working software.
-          </span>
+          Turning ideas into
+          <span class="block text-white/30">working software.</span>
         </h2>
 
         <p
-          class="mt-5 max-w-lg text-base leading-[1.7] text-white/45"
+          class="mt-6 max-w-lg text-base leading-8 text-white/40"
         >
-          A collection of technologies, tools and concepts I've been
-          exploring throughout my development journey.
+          A collection of technologies, tools and concepts I've been exploring throughout my development journey.
         </p>
 
-        <div class="mt-8">
+        <div
+          class="mt-8 flex items-center gap-3 text-xs text-white/25"
+        >
+          <span class="h-px w-8 bg-purple-400/40"></span>
+          <span>Always learning. Always building.</span>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div
+        class="relative rounded-3xl border border-white/[0.07] bg-white/[0.018] p-6 shadow-[0_20px_80px_rgba(0,0,0,.2)] sm:p-8"
+      >
+        <!-- Card glow -->
+        <div
+          class="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-purple-600/[0.07] blur-[70px]"
+        ></div>
+
+        <div class="relative">
           <SkillsList client:load />
         </div>
       </div>
-
-      <div
-        class="hidden h-px w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent lg:block"
-      ></div>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- ADDITIONAL NOTES -->
-    <!-- ========================================================= -->
-
+    <!-- =========================================================
+         BOTTOM STATEMENT
+    ========================================================== -->
     <div
-      id="notes"
-      class="border-t border-white/[0.06] py-20 sm:py-24"
+      class="relative overflow-hidden border-t border-white/[0.07] py-20 text-center"
     >
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-56 w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/[0.07] blur-[100px]"
+      ></div>
 
-      <div class="max-w-2xl">
+      <div class="relative">
 
         <p
-          class="mb-3 text-xs font-medium uppercase leading-none tracking-[0.18em] text-emerald-400 sm:text-sm sm:tracking-[0.2em]"
+          class="text-xs font-semibold uppercase tracking-[0.3em] text-white/25"
         >
-          Things I've studied & explored
+          What's next?
         </p>
 
         <h2
-          class="text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl"
+          class="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl"
         >
-          Notes, ideas &
-          <span class="text-white/40">
-            things I've learned.
-          </span>
+          Building something
+          <span class="text-white/30">worth remembering.</span>
         </h2>
 
-        <p
-          class="mt-5 max-w-xl text-base leading-[1.7] text-white/45"
+        <a
+          href="mailto:aymanejabranesm@gmail.com"
+          class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white/60 transition-colors duration-300 hover:text-white"
         >
-          A collection of notes and concepts I've been studying along
-          my computer science journey.
-        </p>
+          Let's talk
 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="size-4"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
       </div>
-
-      <!-- NOTES GRID -->
-      <div
-        class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-      >
-
-        <!-- NOTE 1 -->
-        <a
-          href="https://app.notion.com/p/Tablas-Hash-Vista-Practica-3a762e0580cb80de84eee02fade92863?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="note-card"
-        >
-          <span class="note-label">Hash Tables</span>
-
-          <h3>Tablas Hash — Vista Práctica</h3>
-
-          <span class="note-arrow">↗</span>
-        </a>
-
-        <!-- NOTE 2 -->
-        <a
-          href="https://app.notion.com/p/Computer-from-hardware-perspective-3a362e0580cb80cfbfa5f1228d060bcc?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="note-card"
-        >
-          <span class="note-label">Computer Science</span>
-
-          <h3>Computer from a Hardware Perspective</h3>
-
-          <span class="note-arrow">↗</span>
-        </a>
-
-        <!-- NOTE 3 -->
-        <a
-          href="https://app.notion.com/p/Tablas-Hash-Definiciones-3a662e0580cb80089dd9c287f8864a93?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="note-card"
-        >
-          <span class="note-label">Data Structures</span>
-
-          <h3>Tablas Hash — Definiciones</h3>
-
-          <span class="note-arrow">↗</span>
-        </a>
-
-        <!-- NOTE 4 -->
-        <a
-          href="https://app.notion.com/p/Git-Github-3a562e0580cb801089e5d47fbbaa221f?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="note-card"
-        >
-          <span class="note-label">Development</span>
-
-          <h3>Git & GitHub</h3>
-
-          <span class="note-arrow">↗</span>
-        </a>
-
-        <!-- NOTE 5 -->
-        <a
-          href="https://app.notion.com/p/Syst-me-Signaux-Analogue-vs-Digitale-3b062e0580cb80d3ba80cb3e8232dee1?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="note-card"
-        >
-          <span class="note-label">Systems</span>
-
-          <h3>Système — Signaux Analogues vs Digitaux</h3>
-
-          <span class="note-arrow">↗</span>
-        </a>
-
-        <!-- NOTE 6 -->
-        <a
-          href="https://app.notion.com/p/Java-3a262e0580cb8037bee0c0e9aa4b480c?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="note-card"
-        >
-          <span class="note-label">Programming</span>
-
-          <h3>Java</h3>
-
-          <span class="note-arrow">↗</span>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- CTA -->
-    <!-- ========================================================= -->
-
-    <div
-      class="border-t border-white/[0.06] py-20 text-center sm:py-24"
-    >
-
-      <p
-        class="mb-4 text-xs font-medium uppercase leading-none tracking-[0.2em] text-white/30 sm:text-sm"
-      >
-        Have an idea?
-      </p>
-
-      <h2
-        class="mx-auto max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.045em] text-white sm:text-5xl"
-      >
-        Let's build
-        <span class="green-glow">
-          something together.
-        </span>
-      </h2>
-
-      <p
-        class="mx-auto mt-5 max-w-lg text-base leading-[1.7] text-white/45"
-      >
-        Whether it's a project, an idea or simply a conversation,
-        I'd love to hear from you.
-      </p>
-
-      <a
-        href="#contact"
-        class="talk-button mt-8 inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-medium"
-      >
-        Let's talk
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="size-4"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06 1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </a>
-
     </div>
 
   </div>
 </section>
 
-<!-- ============================================================= -->
-<!-- GLOBAL STYLES -->
-<!-- ============================================================= -->
-
 <style is:global>
-
-  /* ============================================================= */
-  /* HERO GRID */
-  /* ============================================================= */
+  /* =========================================================
+     GRID
+  ========================================================== */
 
   .hero-grid {
     background-image:
       linear-gradient(
-        rgba(255, 255, 255, 0.025) 1px,
+        rgba(255, 255, 255, 0.026) 1px,
         transparent 1px
       ),
       linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.025) 1px,
+        rgba(255, 255, 255, 0.026) 1px,
         transparent 1px
       );
 
     background-size: 48px 48px;
 
-    mask-image: radial-gradient(
-      ellipse 70% 55% at 50% 20%,
-      black 20%,
-      transparent 80%
-    );
+    mask-image:
+      radial-gradient(
+        ellipse 75% 65% at 50% 25%,
+        black 15%,
+        transparent 78%
+      );
+
+    -webkit-mask-image:
+      radial-gradient(
+        ellipse 75% 65% at 50% 25%,
+        black 15%,
+        transparent 78%
+      );
   }
 
-  /* ============================================================= */
-  /* GREEN NAME GLOW */
-  /* ============================================================= */
+  /* =========================================================
+     SOCIAL BUTTONS
+  ========================================================== */
 
-  .name-glow {
-    color: #86efac;
+  .social-link {
+    position: relative;
 
-    text-shadow:
-      0 0 8px rgba(74, 222, 128, 0.45),
-      0 0 18px rgba(74, 222, 128, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(12px);
 
     transition:
       color 300ms ease,
-      text-shadow 300ms ease;
+      background 300ms ease,
+      border-color 300ms ease,
+      transform 300ms ease,
+      box-shadow 300ms ease;
   }
 
-  .name-glow:hover {
-    color: #bbf7d0;
+  .social-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.075);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-3px);
 
-    text-shadow:
-      0 0 10px rgba(74, 222, 128, 0.7),
-      0 0 25px rgba(74, 222, 128, 0.4);
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(86, 59, 220, 0.08);
   }
 
-  /* ============================================================= */
-  /* GREEN GLOW — SOMETHING TOGETHER */
-  /* ============================================================= */
-
-  .green-glow {
-    color: #86efac;
-
-    text-shadow:
-      0 0 8px rgba(74, 222, 128, 0.45),
-      0 0 18px rgba(74, 222, 128, 0.25),
-      0 0 35px rgba(74, 222, 128, 0.08);
-
-    transition:
-      color 300ms ease,
-      text-shadow 300ms ease;
-  }
-
-  .green-glow:hover {
-    color: #bbf7d0;
-
-    text-shadow:
-      0 0 10px rgba(74, 222, 128, 0.7),
-      0 0 25px rgba(74, 222, 128, 0.4),
-      0 0 45px rgba(74, 222, 128, 0.15);
-  }
-
-  /* ============================================================= */
-  /* SHINY COMPUTER SCIENCE */
-  /* ============================================================= */
+  /* =========================================================
+     SHINY TEXT
+  ========================================================== */
 
   .shiny-sec {
     background:
       linear-gradient(
         110deg,
         #7667ff 0%,
-        #a99cff 25%,
-        #ffffff 50%,
-        #6251ff 75%,
+        #a99cff 20%,
+        #ffffff 45%,
+        #6251ff 70%,
         #7667ff 100%
       );
 
@@ -564,7 +537,6 @@ import SkillsList from "../React/SkillsList.tsx";
   }
 
   @keyframes shine {
-
     0%,
     100% {
       background-position: 100% 50%;
@@ -575,228 +547,94 @@ import SkillsList from "../React/SkillsList.tsx";
     }
   }
 
-  /* ============================================================= */
-  /* SOCIAL BUTTONS */
-  /* ============================================================= */
+  /* =========================================================
+     GLITCH CARD
+  ========================================================== */
 
-  .social-link {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 46px;
-    height: 46px;
-
-    border: 1px solid var(--white-icon-tr);
-    border-radius: 12px;
-
-    color: var(--white-icon);
-
-    background: rgba(20, 20, 20, 0.45);
-
-    backdrop-filter: blur(10px);
-
+  .glitch-card {
     transition:
-      color 300ms ease,
-      background 300ms ease,
-      border-color 300ms ease,
-      transform 300ms ease;
+      transform 500ms cubic-bezier(.2, .8, .2, 1),
+      border-color 500ms ease,
+      box-shadow 500ms ease;
   }
 
-  .social-link:hover {
-    color: white;
+  .glitch-card:hover {
+    transform: translateY(-6px) rotate(0.3deg);
 
-    background: rgba(255, 255, 255, 0.08);
-
-    border-color: rgba(255, 255, 255, 0.2);
-
-    transform: translateY(-2px);
-  }
-
-  /* ============================================================= */
-  /* NOTE CARDS */
-  /* ============================================================= */
-
-  .note-card {
-    position: relative;
-
-    display: flex;
-    min-height: 180px;
-
-    flex-direction: column;
-    justify-content: space-between;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 18px;
-
-    padding: 22px;
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.045),
-        rgba(255, 255, 255, 0.015)
-      );
-
-    color: white;
-
-    transition:
-      transform 300ms ease,
-      border-color 300ms ease,
-      background 300ms ease,
-      box-shadow 300ms ease;
-  }
-
-  .note-card:hover {
-    transform: translateY(-4px);
-
-    border-color: rgba(74, 222, 128, 0.3);
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(74, 222, 128, 0.06),
-        rgba(255, 255, 255, 0.02)
-      );
+    border-color: rgba(255, 255, 255, 0.16);
 
     box-shadow:
-      0 15px 40px rgba(0, 0, 0, 0.2),
-      0 0 30px rgba(74, 222, 128, 0.04);
+      0 40px 120px rgba(0, 0, 0, 0.5),
+      0 0 60px rgba(58, 31, 180, 0.08);
   }
 
-  .note-label {
-    font-size: 11px;
-    font-weight: 500;
+  /* =========================================================
+     HERO LOAD ANIMATION
+  ========================================================== */
 
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-
-    line-height: 1;
-
-    color: rgba(74, 222, 128, 0.7);
+  .hero-fade {
+    animation: heroFade 800ms cubic-bezier(.2, .8, .2, 1) both;
   }
 
-  .note-card h3 {
-    max-width: 90%;
-
-    margin-top: 24px;
-
-    font-size: 1.05rem;
-    font-weight: 500;
-
-    line-height: 1.35;
-    letter-spacing: -0.015em;
-
-    color: rgba(255, 255, 255, 0.85);
+  .hero-fade:nth-child(2) {
+    animation-delay: 80ms;
   }
 
-  .note-arrow {
-    position: absolute;
-
-    right: 20px;
-    bottom: 18px;
-
-    font-size: 18px;
-
-    color: rgba(255, 255, 255, 0.3);
-
-    transition:
-      color 300ms ease,
-      transform 300ms ease;
+  .hero-fade:nth-child(3) {
+    animation-delay: 140ms;
   }
 
-  .note-card:hover .note-arrow {
-    color: #86efac;
-    transform: translate(2px, -2px);
+  .hero-fade:nth-child(4) {
+    animation-delay: 200ms;
   }
 
-  /* ============================================================= */
-  /* LET'S TALK BUTTON */
-  /* ============================================================= */
-
-  .talk-button {
-    color: #bbf7d0;
-
-    border: 1px solid rgba(74, 222, 128, 0.25);
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(74, 222, 128, 0.12),
-        rgba(74, 222, 128, 0.04)
-      );
-
-    box-shadow:
-      0 0 20px rgba(74, 222, 128, 0.08);
-
-    transition:
-      transform 300ms ease,
-      border-color 300ms ease,
-      background 300ms ease,
-      box-shadow 300ms ease;
+  .hero-fade:nth-child(5) {
+    animation-delay: 260ms;
   }
 
-  .talk-button:hover {
-    transform: translateY(-2px);
-
-    border-color: rgba(74, 222, 128, 0.5);
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(74, 222, 128, 0.18),
-        rgba(74, 222, 128, 0.07)
-      );
-
-    box-shadow:
-      0 0 12px rgba(74, 222, 128, 0.18),
-      0 0 35px rgba(74, 222, 128, 0.1);
+  .hero-fade:nth-child(6) {
+    animation-delay: 320ms;
   }
 
-  /* ============================================================= */
-  /* MOBILE */
-  /* ============================================================= */
-
-  @media (max-width: 640px) {
-
-    .hero-grid {
-      background-size: 36px 36px;
+  @keyframes heroFade {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
     }
 
-    .note-card {
-      min-height: 160px;
-      padding: 20px;
-    }
-
-    .note-card h3 {
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    .shiny-sec {
-      white-space: normal;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  /* ============================================================= */
-  /* REDUCED MOTION */
-  /* ============================================================= */
+  /* =========================================================
+     ACCESSIBILITY
+  ========================================================== */
 
   @media (prefers-reduced-motion: reduce) {
-
-    .shiny-sec {
+    .shiny-sec,
+    .hero-fade {
       animation: none;
     }
 
     .social-link,
-    .note-card,
-    .note-arrow,
-    .talk-button {
+    .glitch-card {
       transition: none;
     }
   }
 
+  /* =========================================================
+     MOBILE
+  ========================================================== */
+
+  @media (max-width: 640px) {
+    .hero-grid {
+      background-size: 36px 36px;
+    }
+
+    .glitch-card:hover {
+      transform: none;
+    }
+  }
 </style>
