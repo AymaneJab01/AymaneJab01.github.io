@@ -75,7 +75,7 @@ import SkillsList from "../React/SkillsList.tsx";
           class="mt-7 max-w-xl text-base leading-[1.65] text-[var(--white-icon)] sm:text-lg sm:leading-[1.65] lg:text-xl"
         >
           Building a
-          <span class="shiny-sec font-medium whitespace-nowrap">
+          <span class="shiny-sec font-medium">
             computer science
           </span>
           journey through code, systems and creative ideas.
@@ -252,7 +252,8 @@ import SkillsList from "../React/SkillsList.tsx";
           class="max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl"
         >
           <span class="whitespace-nowrap">Turning ideas into</span>
-          <span class="mt-1 block text-white/40">
+
+          <span class="block text-white/40">
             working software.
           </span>
         </h2>
@@ -295,7 +296,9 @@ import SkillsList from "../React/SkillsList.tsx";
           class="text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl"
         >
           Notes, ideas &
-          <span class="text-white/40">things I've learned.</span>
+          <span class="text-white/40">
+            things I've learned.
+          </span>
         </h2>
 
         <p
@@ -414,10 +417,12 @@ import SkillsList from "../React/SkillsList.tsx";
       </p>
 
       <h2
-        class="mx-auto max-w-2xl text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl"
+        class="mx-auto max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.045em] text-white sm:text-5xl"
       >
         Let's build
-        <span class="text-white/40">something together.</span>
+        <span class="green-glow">
+          something together.
+        </span>
       </h2>
 
       <p
@@ -441,7 +446,7 @@ import SkillsList from "../React/SkillsList.tsx";
         >
           <path
             fill-rule="evenodd"
-            d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
+            d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06 1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
             clip-rule="evenodd"
           />
         </svg>
@@ -458,9 +463,9 @@ import SkillsList from "../React/SkillsList.tsx";
 
 <style is:global>
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
   /* HERO GRID */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   .hero-grid {
     background-image:
@@ -483,9 +488,9 @@ import SkillsList from "../React/SkillsList.tsx";
     );
   }
 
-  /* ------------------------------------------------------------- */
-  /* NAME GLOW */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
+  /* GREEN NAME GLOW */
+  /* ============================================================= */
 
   .name-glow {
     color: #86efac;
@@ -507,9 +512,35 @@ import SkillsList from "../React/SkillsList.tsx";
       0 0 25px rgba(74, 222, 128, 0.4);
   }
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
+  /* GREEN GLOW — SOMETHING TOGETHER */
+  /* ============================================================= */
+
+  .green-glow {
+    color: #86efac;
+
+    text-shadow:
+      0 0 8px rgba(74, 222, 128, 0.45),
+      0 0 18px rgba(74, 222, 128, 0.25),
+      0 0 35px rgba(74, 222, 128, 0.08);
+
+    transition:
+      color 300ms ease,
+      text-shadow 300ms ease;
+  }
+
+  .green-glow:hover {
+    color: #bbf7d0;
+
+    text-shadow:
+      0 0 10px rgba(74, 222, 128, 0.7),
+      0 0 25px rgba(74, 222, 128, 0.4),
+      0 0 45px rgba(74, 222, 128, 0.15);
+  }
+
+  /* ============================================================= */
   /* SHINY COMPUTER SCIENCE */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   .shiny-sec {
     background:
@@ -544,9 +575,9 @@ import SkillsList from "../React/SkillsList.tsx";
     }
   }
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
   /* SOCIAL BUTTONS */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   .social-link {
     display: inline-flex;
@@ -583,9 +614,9 @@ import SkillsList from "../React/SkillsList.tsx";
     transform: translateY(-2px);
   }
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
   /* NOTE CARDS */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   .note-card {
     position: relative;
@@ -682,9 +713,9 @@ import SkillsList from "../React/SkillsList.tsx";
     transform: translate(2px, -2px);
   }
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
   /* LET'S TALK BUTTON */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   .talk-button {
     color: #bbf7d0;
@@ -725,9 +756,9 @@ import SkillsList from "../React/SkillsList.tsx";
       0 0 35px rgba(74, 222, 128, 0.1);
   }
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
   /* MOBILE */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   @media (max-width: 640px) {
 
@@ -750,9 +781,9 @@ import SkillsList from "../React/SkillsList.tsx";
     }
   }
 
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
   /* REDUCED MOTION */
-  /* ------------------------------------------------------------- */
+  /* ============================================================= */
 
   @media (prefers-reduced-motion: reduce) {
 
