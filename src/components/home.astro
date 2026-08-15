@@ -2,57 +2,6 @@
 import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
-
-const notes = [
-  {
-    title: "Tablas Hash — Vista Práctica",
-    description:
-      "Practical notes and examples covering hash tables and their implementation.",
-    category: "Data Structures",
-    notionUrl:
-      "https://app.notion.com/p/Tablas-Hash-Vista-Practica-3a762e0580cb80de84eee02fade92863?source=copy_link",
-  },
-  {
-    title: "Computer from Hardware Perspective",
-    description:
-      "Notes exploring computers from a hardware and systems perspective.",
-    category: "Computer Science",
-    notionUrl:
-      "https://app.notion.com/p/Computer-from-hardware-perspective-3a362e0580cb80cfbfa5f1228d060bcc?source=copy_link",
-  },
-  {
-    title: "Tablas Hash — Definiciones",
-    description:
-      "Definitions and fundamental concepts related to hash tables and data structures.",
-    category: "Data Structures",
-    notionUrl:
-      "https://app.notion.com/p/Tablas-Hash-Definiciones-3a662e0580cb80089dd9c287f8864a93?source=copy_link",
-  },
-  {
-    title: "Git & GitHub",
-    description:
-      "Notes and concepts covering Git, GitHub and version control workflows.",
-    category: "Development Tools",
-    notionUrl:
-      "https://app.notion.com/p/Git-Github-3a562e0580cb801089e5d47fbbaa221f?source=copy_link",
-  },
-  {
-    title: "Système Signaux — Analogue vs Digitale",
-    description:
-      "Notes exploring analogue and digital signals and their fundamental differences.",
-    category: "Computer Science",
-    notionUrl:
-      "https://app.notion.com/p/Syst-me-Signaux-Analogue-vs-Digitale-3b062e0580cb80d3ba80cb3e8232dee1?source=copy_link",
-  },
-  {
-    title: "Java",
-    description:
-      "Programming notes and concepts related to the Java programming language.",
-    category: "Programming",
-    notionUrl:
-      "https://app.notion.com/p/Java-3a262e0580cb8037bee0c0e9aa4b480c?source=copy_link",
-  },
-];
 ---
 
 <section
@@ -65,11 +14,11 @@ const notes = [
 
   <div class="pointer-events-none absolute inset-0 -z-10">
     <div
-      class="absolute left-1/2 top-0 h-[600px] w-[700px] -translate-x-1/2 rounded-full bg-[#3212b8]/10 blur-[140px]"
+      class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#3212b8]/10 blur-[140px] sm:h-[600px] sm:w-[700px]"
     ></div>
 
     <div
-      class="absolute right-[-200px] top-[35%] h-[400px] w-[400px] rounded-full bg-[#172c9e]/10 blur-[120px]"
+      class="absolute right-[-200px] top-[35%] h-[300px] w-[300px] rounded-full bg-[#172c9e]/10 blur-[120px] sm:h-[400px] sm:w-[400px]"
     ></div>
 
     <div class="absolute inset-0 hero-grid opacity-30"></div>
@@ -82,16 +31,17 @@ const notes = [
     <!-- ========================================================= -->
 
     <div
-      class="grid min-h-[720px] items-center gap-14 py-24 lg:grid-cols-[1.15fr_.85fr] lg:py-28"
+      class="grid min-h-[auto] items-center gap-14 py-20 sm:py-24 lg:min-h-[720px] lg:grid-cols-[1.15fr_.85fr] lg:gap-14 lg:py-28"
     >
-      <!-- HERO LEFT -->
-      <div class="relative z-10">
+
+      <!-- LEFT -->
+      <div class="relative z-10 min-w-0">
 
         <!-- STATUS -->
         <div
-          class="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--white-icon-tr)] bg-white/[0.035] px-3.5 py-2 text-sm text-[var(--white-icon)] backdrop-blur-md"
+          class="mb-7 inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--white-icon-tr)] bg-white/[0.035] px-3.5 py-2 text-sm leading-none text-[var(--white-icon)] backdrop-blur-md"
         >
-          <span class="relative flex h-2 w-2">
+          <span class="relative flex h-2 w-2 shrink-0">
             <span
               class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
             ></span>
@@ -101,53 +51,53 @@ const notes = [
             ></span>
           </span>
 
-          Open to opportunities
+          <span>Open to opportunities</span>
         </div>
 
         <!-- INTRO -->
         <p
-          class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--white-icon)]"
+          class="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[var(--white-icon)] sm:text-sm sm:tracking-[0.25em]"
         >
           Hi, I'm
-          <span class="name-glow ml-1">Aymane Jabrane</span>
+          <span class="name-glow">Aymane Jabrane</span>
         </p>
 
         <!-- TITLE -->
         <h1
-          class="max-w-4xl text-6xl font-semibold leading-[0.9] tracking-[-0.05em] sm:text-7xl lg:text-[5.8rem]"
+          class="max-w-4xl text-[3.4rem] font-semibold leading-[0.94] tracking-[-0.055em] sm:text-7xl lg:text-[5.8rem]"
         >
           Software
-          <span class="mt-1 block text-white/50">
-            Developer.
-          </span>
+          <span class="block text-white/50">Developer.</span>
         </h1>
 
         <!-- DESCRIPTION -->
         <p
-          class="mt-6 max-w-xl text-lg leading-[1.65] text-[var(--white-icon)] sm:text-xl"
+          class="mt-7 max-w-xl text-base leading-[1.65] text-[var(--white-icon)] sm:text-lg sm:leading-[1.65] lg:text-xl"
         >
           Building a
-          <span class="shiny-sec font-medium">
+          <span class="shiny-sec font-medium whitespace-nowrap">
             computer science
           </span>
           journey through code, systems and creative ideas.
         </p>
 
-        <!-- CTA + SOCIALS -->
-        <div class="mt-8 flex flex-wrap items-center gap-3">
+        <!-- CTA / SOCIALS -->
+        <div
+          class="mt-8 flex flex-wrap items-center gap-3 sm:mt-9"
+        >
 
           <!-- VIEW WORK -->
           <a
             href="#projects"
-            class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+            class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-medium leading-none text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
           >
-            View my work
+            <span>View my work</span>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              class="size-4 transition-transform duration-300 group-hover:translate-x-1"
+              class="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
             >
               <path
                 fill-rule="evenodd"
@@ -162,9 +112,9 @@ const notes = [
 
             <!-- GITHUB -->
             <a
-              href="https://github.com/AymaneJab01"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://github.com/AymaneJab01"
               aria-label="GitHub"
               class="social-link"
             >
@@ -182,9 +132,9 @@ const notes = [
 
             <!-- LINKEDIN -->
             <a
-              href="https://www.linkedin.com/in/aymane-jabrane-73025726a/"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/aymane-jabrane-73025726a/"
               aria-label="LinkedIn"
               class="social-link"
             >
@@ -202,9 +152,9 @@ const notes = [
 
             <!-- EMAIL -->
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=aymanejabranesm@gmail.com&su=Hey%20Jabrane!"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=aymanejabranesm@gmail.com&su=Hey%20Jabrane!"
               aria-label="Email Me"
               class="social-link"
             >
@@ -215,7 +165,7 @@ const notes = [
                 class="size-5"
               >
                 <path
-                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a1.99 1.99 0 0 0-3.27-1.64"
+                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
                 />
               </svg>
             </a>
@@ -224,24 +174,29 @@ const notes = [
         </div>
       </div>
 
-      <!-- HERO RIGHT -->
+      <!-- ========================================================= -->
+      <!-- RIGHT / GLITCH -->
+      <!-- ========================================================= -->
+
       <div
         class="relative flex items-center justify-center lg:justify-end"
       >
+
         <!-- GLOW -->
         <div
-          class="absolute h-[280px] w-[280px] rounded-full bg-[#3212b8]/20 blur-[100px]"
+          class="absolute h-[220px] w-[220px] rounded-full bg-[#3212b8]/20 blur-[100px] sm:h-[280px] sm:w-[280px]"
         ></div>
 
-        <!-- GLITCH CARD -->
+        <!-- CARD -->
         <div
-          class="relative aspect-square w-full max-w-[390px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] p-2 shadow-2xl shadow-black/30 backdrop-blur-sm"
+          class="relative aspect-square w-full max-w-[330px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.025] p-2 shadow-2xl shadow-black/30 backdrop-blur-sm sm:max-w-[390px]"
         >
+
           <div
-            class="absolute inset-0 rounded-[1.7rem] border border-white/[0.06]"
+            class="absolute inset-0 rounded-[1.5rem] border border-white/[0.06]"
           ></div>
 
-          <div class="h-full w-full overflow-hidden rounded-[1.7rem]">
+          <div class="h-full w-full overflow-hidden rounded-[1.5rem]">
             <LetterGlitch
               client:load
               glitchColors={["#270d6d", "#1f0b81", "#241a38"]}
@@ -252,9 +207,9 @@ const notes = [
             />
           </div>
 
-          <!-- CORNER LABEL -->
+          <!-- LABEL -->
           <div
-            class="absolute bottom-5 left-5 rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 text-xs font-mono text-white/50 backdrop-blur-md"
+            class="absolute bottom-4 left-4 rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 text-xs font-mono leading-none text-white/50 backdrop-blur-md sm:bottom-5 sm:left-5"
           >
             {"< build />"}
           </div>
@@ -266,263 +221,246 @@ const notes = [
     <!-- TECHNOLOGIES -->
     <!-- ========================================================= -->
 
-    <section class="border-y border-white/[0.06] py-10">
+    <div class="border-y border-white/[0.06] py-10 sm:py-12">
+
       <p
-        class="mb-6 text-center text-xs font-medium uppercase tracking-[0.25em] text-white/30"
+        class="mb-7 text-center text-[10px] font-medium uppercase leading-none tracking-[0.22em] text-white/30 sm:text-xs sm:tracking-[0.25em]"
       >
         Technologies I work with
       </p>
 
       <LogoWall />
-    </section>
+    </div>
 
     <!-- ========================================================= -->
     <!-- SKILLS -->
     <!-- ========================================================= -->
 
-    <section class="py-24">
-      <div
-        class="grid items-center gap-10 lg:grid-cols-[1fr_auto]"
-      >
-        <div>
+    <div
+      class="grid items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1fr_auto]"
+    >
 
-          <p
-            class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--sec)]"
-          >
-            Skills & tools
-          </p>
+      <div class="min-w-0">
 
-          <h2
-            class="max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.025em] text-white sm:text-4xl"
-          >
-            Turning ideas into
-            <span class="block text-white/40 sm:inline">
-              working software.
-            </span>
-          </h2>
+        <p
+          class="mb-3 text-xs font-medium uppercase leading-none tracking-[0.18em] text-[var(--sec)] sm:text-sm sm:tracking-[0.2em]"
+        >
+          Skills & tools
+        </p>
 
-          <p
-            class="mt-5 max-w-lg text-base leading-[1.7] text-white/45"
-          >
-            A collection of technologies, tools and concepts I've been
-            exploring throughout my development journey.
-          </p>
+        <h2
+          class="max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl"
+        >
+          <span class="whitespace-nowrap">Turning ideas into</span>
+          <span class="mt-1 block text-white/40">
+            working software.
+          </span>
+        </h2>
 
-          <div class="mt-8">
-            <SkillsList client:load />
-          </div>
+        <p
+          class="mt-5 max-w-lg text-base leading-[1.7] text-white/45"
+        >
+          A collection of technologies, tools and concepts I've been
+          exploring throughout my development journey.
+        </p>
+
+        <div class="mt-8">
+          <SkillsList client:load />
         </div>
-
-        <div
-          class="hidden h-px w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent lg:block"
-        ></div>
       </div>
-    </section>
+
+      <div
+        class="hidden h-px w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent lg:block"
+      ></div>
+    </div>
 
     <!-- ========================================================= -->
     <!-- ADDITIONAL NOTES -->
     <!-- ========================================================= -->
 
-    <section class="border-t border-white/[0.06] py-24">
-      <div class="mb-10">
+    <div
+      id="notes"
+      class="border-t border-white/[0.06] py-20 sm:py-24"
+    >
+
+      <div class="max-w-2xl">
 
         <p
-          class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-emerald-400/70"
+          class="mb-3 text-xs font-medium uppercase leading-none tracking-[0.18em] text-emerald-400 sm:text-sm sm:tracking-[0.2em]"
         >
-          Additional notes
+          Things I've studied & explored
         </p>
 
         <h2
-          class="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.025em] text-white sm:text-4xl"
+          class="text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl"
         >
-          Things I've
-          <span class="notes-title-glow">
-            studied & explored.
-          </span>
+          Notes, ideas &
+          <span class="text-white/40">things I've learned.</span>
         </h2>
 
         <p
           class="mt-5 max-w-xl text-base leading-[1.7] text-white/45"
         >
-          Notes, concepts and documentation from my computer science
-          journey.
+          A collection of notes and concepts I've been studying along
+          my computer science journey.
         </p>
+
       </div>
 
       <!-- NOTES GRID -->
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          notes.map((note) => (
-            <a
-              href={note.notionUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="note-card group relative overflow-hidden rounded-2xl border border-emerald-400/[0.08] bg-white/[0.02] p-5"
-            >
-              <!-- CARD GLOW -->
-              <div
-                class="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-emerald-400/10 blur-[70px] opacity-40 transition-all duration-500 group-hover:bg-emerald-400/20 group-hover:opacity-100"
-              ></div>
-
-              <div
-                class="pointer-events-none absolute -bottom-20 -left-20 h-36 w-36 rounded-full bg-emerald-400/5 blur-[60px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              ></div>
-
-              <div class="relative">
-
-                <!-- CATEGORY -->
-                <div class="mb-5 flex items-center justify-between">
-                  <span
-                    class="rounded-md border border-emerald-400/10 bg-emerald-400/[0.035] px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-emerald-300/50 transition-colors duration-300 group-hover:border-emerald-400/20 group-hover:text-emerald-300/80"
-                  >
-                    {note.category}
-                  </span>
-
-                  <!-- ARROW -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="size-4 text-white/25 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-emerald-300"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.22 14.78a.75.75 0 0 1 0-1.06L13.94 5H6.75a.75.75 0 0 1 0-1.5h9a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-1.5 0V6.06l-8.72 8.72a.75.75 0 0 1-1.06 0Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-
-                <!-- TITLE -->
-                <h3
-                  class="text-lg font-medium leading-[1.3] tracking-[-0.01em] text-white transition-colors duration-300 group-hover:text-emerald-50"
-                >
-                  {note.title}
-                </h3>
-
-                <!-- DESCRIPTION -->
-                <p
-                  class="mt-3 text-sm leading-[1.65] text-white/40"
-                >
-                  {note.description}
-                </p>
-
-                <!-- OPEN NOTES -->
-                <div
-                  class="mt-6 flex items-center gap-2 text-xs font-medium text-white/30 transition-colors duration-300 group-hover:text-emerald-300/80"
-                >
-                  Open notes
-
-                  <span
-                    class="transition-transform duration-300 group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- CONTACT -->
-    <!-- ========================================================= -->
-
-    <section
-      id="contact"
-      class="relative overflow-hidden border-t border-white/[0.06] py-28"
-    >
-      <!-- CONTACT GLOW -->
       <div
-        class="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3212b8]/15 blur-[120px]"
-      ></div>
+        class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      >
 
-      <div class="mx-auto max-w-2xl text-center">
-
-        <p
-          class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--sec)]"
+        <!-- NOTE 1 -->
+        <a
+          href="https://app.notion.com/p/Tablas-Hash-Vista-Practica-3a762e0580cb80de84eee02fade92863?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-card"
         >
-          Get in touch
-        </p>
+          <span class="note-label">Hash Tables</span>
 
-        <h2
-          class="text-4xl font-semibold leading-[1.08] tracking-[-0.035em] text-white sm:text-5xl"
+          <h3>Tablas Hash — Vista Práctica</h3>
+
+          <span class="note-arrow">↗</span>
+        </a>
+
+        <!-- NOTE 2 -->
+        <a
+          href="https://app.notion.com/p/Computer-from-hardware-perspective-3a362e0580cb80cfbfa5f1228d060bcc?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-card"
         >
-          Let's build something
-          <span class="shiny-sec">
-            together.
-          </span>
-        </h2>
+          <span class="note-label">Computer Science</span>
 
-        <p
-          class="mx-auto mt-5 max-w-lg text-base leading-[1.7] text-white/45"
+          <h3>Computer from a Hardware Perspective</h3>
+
+          <span class="note-arrow">↗</span>
+        </a>
+
+        <!-- NOTE 3 -->
+        <a
+          href="https://app.notion.com/p/Tablas-Hash-Definiciones-3a662e0580cb80089dd9c287f8864a93?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-card"
         >
-          Whether you have an opportunity, an idea, or simply want to
-          connect, feel free to reach out.
-        </p>
+          <span class="note-label">Data Structures</span>
 
-        <div
-          class="mt-9 flex flex-wrap items-center justify-center gap-3"
+          <h3>Tablas Hash — Definiciones</h3>
+
+          <span class="note-arrow">↗</span>
+        </a>
+
+        <!-- NOTE 4 -->
+        <a
+          href="https://app.notion.com/p/Git-Github-3a562e0580cb801089e5d47fbbaa221f?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-card"
         >
+          <span class="note-label">Development</span>
 
-          <!-- LET'S TALK -->
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=aymanejabranesm@gmail.com&su=Hey%20Jabrane!"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-button group inline-flex items-center gap-2 rounded-xl px-5 py-3.5 text-sm font-medium text-white"
-          >
-            <span class="relative z-10">
-              Let's talk
-            </span>
+          <h3>Git & GitHub</h3>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="relative z-10 size-4 transition-transform duration-300 group-hover:translate-x-1"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
+          <span class="note-arrow">↗</span>
+        </a>
 
-          <!-- GITHUB -->
-          <a
-            href="https://github.com/AymaneJab01"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-secondary"
-          >
-            GitHub
-          </a>
+        <!-- NOTE 5 -->
+        <a
+          href="https://app.notion.com/p/Syst-me-Signaux-Analogue-vs-Digitale-3b062e0580cb80d3ba80cb3e8232dee1?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-card"
+        >
+          <span class="note-label">Systems</span>
 
-          <!-- LINKEDIN -->
-          <a
-            href="https://www.linkedin.com/in/aymane-jabrane-73025726a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-secondary"
-          >
-            LinkedIn
-          </a>
-        </div>
+          <h3>Système — Signaux Analogues vs Digitaux</h3>
+
+          <span class="note-arrow">↗</span>
+        </a>
+
+        <!-- NOTE 6 -->
+        <a
+          href="https://app.notion.com/p/Java-3a262e0580cb8037bee0c0e9aa4b480c?source=copy_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-card"
+        >
+          <span class="note-label">Programming</span>
+
+          <h3>Java</h3>
+
+          <span class="note-arrow">↗</span>
+        </a>
+
       </div>
-    </section>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- CTA -->
+    <!-- ========================================================= -->
+
+    <div
+      class="border-t border-white/[0.06] py-20 text-center sm:py-24"
+    >
+
+      <p
+        class="mb-4 text-xs font-medium uppercase leading-none tracking-[0.2em] text-white/30 sm:text-sm"
+      >
+        Have an idea?
+      </p>
+
+      <h2
+        class="mx-auto max-w-2xl text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl"
+      >
+        Let's build
+        <span class="text-white/40">something together.</span>
+      </h2>
+
+      <p
+        class="mx-auto mt-5 max-w-lg text-base leading-[1.7] text-white/45"
+      >
+        Whether it's a project, an idea or simply a conversation,
+        I'd love to hear from you.
+      </p>
+
+      <a
+        href="#contact"
+        class="talk-button mt-8 inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-medium"
+      >
+        Let's talk
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-4"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </a>
+
+    </div>
 
   </div>
 </section>
 
+<!-- ============================================================= -->
+<!-- GLOBAL STYLES -->
+<!-- ============================================================= -->
+
 <style is:global>
 
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
   /* HERO GRID */
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
 
   .hero-grid {
     background-image:
@@ -545,51 +483,33 @@ const notes = [
     );
   }
 
-  /* ========================================================= */
-  /* Aymane Jabrane GREEN GLOW */
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
+  /* NAME GLOW */
+  /* ------------------------------------------------------------- */
 
   .name-glow {
-    display: inline-block;
-
-    background:
-      linear-gradient(
-        110deg,
-        #4ade80 0%,
-        #86efac 25%,
-        #ffffff 50%,
-        #4ade80 75%,
-        #22c55e 100%
-      );
-
-    background-size: 250% 100%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
+    color: #86efac;
 
     text-shadow:
-      0 0 12px rgba(74, 222, 128, 0.25),
-      0 0 30px rgba(74, 222, 128, 0.12);
+      0 0 8px rgba(74, 222, 128, 0.45),
+      0 0 18px rgba(74, 222, 128, 0.25);
 
-    animation: name-shine 5s ease-in-out infinite;
+    transition:
+      color 300ms ease,
+      text-shadow 300ms ease;
   }
 
-  @keyframes name-shine {
-    0%,
-    100% {
-      background-position: 100% 50%;
-    }
+  .name-glow:hover {
+    color: #bbf7d0;
 
-    50% {
-      background-position: 0% 50%;
-    }
+    text-shadow:
+      0 0 10px rgba(74, 222, 128, 0.7),
+      0 0 25px rgba(74, 222, 128, 0.4);
   }
 
-  /* ========================================================= */
-  /* COMPUTER SCIENCE GLOW */
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
+  /* SHINY COMPUTER SCIENCE */
+  /* ------------------------------------------------------------- */
 
   .shiny-sec {
     background:
@@ -613,6 +533,7 @@ const notes = [
   }
 
   @keyframes shine {
+
     0%,
     100% {
       background-position: 100% 50%;
@@ -623,12 +544,13 @@ const notes = [
     }
   }
 
-  /* ========================================================= */
-  /* SOCIAL LINKS */
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
+  /* SOCIAL BUTTONS */
+  /* ------------------------------------------------------------- */
 
   .social-link {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -639,6 +561,7 @@ const notes = [
     border-radius: 12px;
 
     color: var(--white-icon);
+
     background: rgba(20, 20, 20, 0.45);
 
     backdrop-filter: blur(10px);
@@ -652,200 +575,196 @@ const notes = [
 
   .social-link:hover {
     color: white;
+
     background: rgba(255, 255, 255, 0.08);
+
     border-color: rgba(255, 255, 255, 0.2);
+
     transform: translateY(-2px);
   }
 
-  /* ========================================================= */
-  /* NOTES TITLE */
-  /* ========================================================= */
-
-  .notes-title-glow {
-    color: #86efac;
-
-    text-shadow:
-      0 0 12px rgba(74, 222, 128, 0.18),
-      0 0 30px rgba(74, 222, 128, 0.08);
-  }
-
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
   /* NOTE CARDS */
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
 
   .note-card {
+    position: relative;
+
+    display: flex;
+    min-height: 180px;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+
+    padding: 22px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 255, 255, 0.015)
+      );
+
+    color: white;
+
     transition:
       transform 300ms ease,
-      background 300ms ease,
       border-color 300ms ease,
+      background 300ms ease,
       box-shadow 300ms ease;
   }
 
   .note-card:hover {
     transform: translateY(-4px);
 
-    background: rgba(74, 222, 128, 0.025);
-
-    border-color: rgba(74, 222, 128, 0.22);
-
-    box-shadow:
-      0 16px 45px rgba(0, 0, 0, 0.22),
-      0 0 30px rgba(74, 222, 128, 0.06),
-      inset 0 0 25px rgba(74, 222, 128, 0.025);
-  }
-
-  /* ========================================================= */
-  /* CONTACT BUTTON */
-  /* ========================================================= */
-
-  .contact-button {
-    position: relative;
-    overflow: hidden;
-
-    border: 1px solid rgba(118, 103, 255, 0.45);
+    border-color: rgba(74, 222, 128, 0.3);
 
     background:
       linear-gradient(
-        110deg,
-        rgba(118, 103, 255, 0.08),
-        rgba(255, 255, 255, 0.04),
-        rgba(98, 81, 255, 0.1)
+        145deg,
+        rgba(74, 222, 128, 0.06),
+        rgba(255, 255, 255, 0.02)
       );
 
     box-shadow:
-      0 0 20px rgba(118, 103, 255, 0.14),
-      inset 0 0 20px rgba(118, 103, 255, 0.04);
+      0 15px 40px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(74, 222, 128, 0.04);
+  }
+
+  .note-label {
+    font-size: 11px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+
+    line-height: 1;
+
+    color: rgba(74, 222, 128, 0.7);
+  }
+
+  .note-card h3 {
+    max-width: 90%;
+
+    margin-top: 24px;
+
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .note-arrow {
+    position: absolute;
+
+    right: 20px;
+    bottom: 18px;
+
+    font-size: 18px;
+
+    color: rgba(255, 255, 255, 0.3);
+
+    transition:
+      color 300ms ease,
+      transform 300ms ease;
+  }
+
+  .note-card:hover .note-arrow {
+    color: #86efac;
+    transform: translate(2px, -2px);
+  }
+
+  /* ------------------------------------------------------------- */
+  /* LET'S TALK BUTTON */
+  /* ------------------------------------------------------------- */
+
+  .talk-button {
+    color: #bbf7d0;
+
+    border: 1px solid rgba(74, 222, 128, 0.25);
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(74, 222, 128, 0.12),
+        rgba(74, 222, 128, 0.04)
+      );
+
+    box-shadow:
+      0 0 20px rgba(74, 222, 128, 0.08);
 
     transition:
       transform 300ms ease,
       border-color 300ms ease,
-      box-shadow 300ms ease,
-      background 300ms ease;
+      background 300ms ease,
+      box-shadow 300ms ease;
   }
 
-  .contact-button::before {
-    content: "";
-
-    position: absolute;
-    inset: -100%;
-
-    background:
-      linear-gradient(
-        110deg,
-        transparent 30%,
-        rgba(118, 103, 255, 0.35) 45%,
-        rgba(255, 255, 255, 0.7) 50%,
-        rgba(98, 81, 255, 0.35) 55%,
-        transparent 70%
-      );
-
-    transform: translateX(-100%);
-
-    animation: contact-shine 4s ease-in-out infinite;
-  }
-
-  .contact-button:hover {
+  .talk-button:hover {
     transform: translateY(-2px);
 
-    border-color: rgba(169, 156, 255, 0.75);
+    border-color: rgba(74, 222, 128, 0.5);
 
     background:
       linear-gradient(
-        110deg,
-        rgba(118, 103, 255, 0.15),
-        rgba(255, 255, 255, 0.06),
-        rgba(98, 81, 255, 0.18)
+        135deg,
+        rgba(74, 222, 128, 0.18),
+        rgba(74, 222, 128, 0.07)
       );
 
     box-shadow:
-      0 0 25px rgba(118, 103, 255, 0.3),
-      0 0 55px rgba(98, 81, 255, 0.12),
-      inset 0 0 20px rgba(118, 103, 255, 0.08);
+      0 0 12px rgba(74, 222, 128, 0.18),
+      0 0 35px rgba(74, 222, 128, 0.1);
   }
 
-  @keyframes contact-shine {
-    0%,
-    55% {
-      transform: translateX(-100%);
+  /* ------------------------------------------------------------- */
+  /* MOBILE */
+  /* ------------------------------------------------------------- */
+
+  @media (max-width: 640px) {
+
+    .hero-grid {
+      background-size: 36px 36px;
     }
 
-    75%,
-    100% {
-      transform: translateX(100%);
+    .note-card {
+      min-height: 160px;
+      padding: 20px;
+    }
+
+    .note-card h3 {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .shiny-sec {
+      white-space: normal;
     }
   }
 
-  /* ========================================================= */
-  /* CONTACT SECONDARY BUTTONS */
-  /* ========================================================= */
-
-  .contact-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0.875rem 1.25rem;
-
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.75rem;
-
-    background: rgba(255, 255, 255, 0.025);
-
-    color: rgba(255, 255, 255, 0.5);
-
-    font-size: 0.875rem;
-    font-weight: 500;
-
-    transition:
-      transform 300ms ease,
-      color 300ms ease,
-      background 300ms ease,
-      border-color 300ms ease;
-  }
-
-  .contact-secondary:hover {
-    transform: translateY(-2px);
-
-    color: white;
-
-    background: rgba(255, 255, 255, 0.06);
-
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
   /* REDUCED MOTION */
-  /* ========================================================= */
+  /* ------------------------------------------------------------- */
 
   @media (prefers-reduced-motion: reduce) {
-    .name-glow,
-    .shiny-sec {
-      animation: none;
-    }
 
-    .contact-button::before {
+    .shiny-sec {
       animation: none;
     }
 
     .social-link,
     .note-card,
-    .contact-button,
-    .contact-secondary {
+    .note-arrow,
+    .talk-button {
       transition: none;
-    }
-  }
-
-  /* ========================================================= */
-  /* MOBILE */
-  /* ========================================================= */
-
-  @media (max-width: 640px) {
-    .name-glow {
-      display: inline;
-    }
-
-    .note-card {
-      padding: 1.125rem;
     }
   }
 
