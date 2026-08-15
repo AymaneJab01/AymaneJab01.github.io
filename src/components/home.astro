@@ -1,3 +1,4 @@
+```astro
 ---
 import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
@@ -39,6 +40,7 @@ import SkillsList from "../React/SkillsList.tsx";
             <span
               class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
             ></span>
+
             <span
               class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
             ></span>
@@ -60,19 +62,18 @@ import SkillsList from "../React/SkillsList.tsx";
           <span class="block text-white/50">Developer.</span>
         </h1>
 
+        <!-- Description -->
         <p
           class="mt-7 max-w-xl text-lg leading-relaxed text-[var(--white-icon)] sm:text-xl"
         >
-          Building a  
-           <span class="shiny-sec font-medium">
-              computer science 
-          </span>
-            journey through code, systems and creative ideas.
+          Building a <span class="shiny-sec font-medium">computer science</span>
+          journey through code, systems and creative ideas.
         </p>
 
         <!-- CTA / Socials -->
         <div class="mt-9 flex flex-wrap items-center gap-3">
 
+          <!-- View Work -->
           <a
             href="#projects"
             class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
@@ -93,6 +94,7 @@ import SkillsList from "../React/SkillsList.tsx";
             </svg>
           </a>
 
+          <!-- Socials -->
           <div class="flex items-center gap-2">
 
             <!-- GitHub -->
@@ -197,9 +199,7 @@ import SkillsList from "../React/SkillsList.tsx";
     </div>
 
     <!-- LOGOS -->
-    <div
-      class="border-y border-white/[0.06] py-10"
-    >
+    <div class="border-y border-white/[0.06] py-10">
       <p
         class="mb-7 text-center text-xs font-medium uppercase tracking-[0.25em] text-white/30"
       >
@@ -224,7 +224,7 @@ import SkillsList from "../React/SkillsList.tsx";
           class="max-w-xl text-3xl font-semibold tracking-tight text-white sm:text-4xl"
         >
           Turning ideas into
-          <span class="text-white/40" > working software.</span>
+          <span class="text-white/40">working software.</span>
         </h2>
 
         <p
@@ -324,3 +324,6 @@ import SkillsList from "../React/SkillsList.tsx";
     }
   }
 </style>
+```
+
+The important spacing fix is that `computer science` now sits directly inside the sentence without the extra whitespace/newlines around the `<span>`. I also cleaned up the `working software` span so it doesn't introduce an unintended leading space.
