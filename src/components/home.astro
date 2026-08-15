@@ -56,6 +56,7 @@ import SkillsList from "../React/SkillsList.tsx";
             <span
               class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
             ></span>
+
             <span
               class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,.7)]"
             ></span>
@@ -78,25 +79,21 @@ import SkillsList from "../React/SkillsList.tsx";
           Software
           <span
             class="hero-gradient block bg-gradient-to-r from-white via-white/75 to-white/30 bg-clip-text text-transparent"
-          >
-            Developer.
-          </span>
+          >Developer.</span>
         </h1>
 
         <!-- Description -->
         <p
           class="hero-fade mt-8 max-w-2xl text-base leading-8 text-white/45 sm:text-lg sm:leading-8"
         >
-          Building a
-          <span class="shiny-sec font-medium">computer science</span>
-          journey through code, systems and creative ideas.
-          <span class="block">
-            I enjoy turning complex problems into simple, useful software.
-          </span>
+          Building a <span class="shiny-sec font-medium">computer science</span> journey through code, systems and creative ideas.
+          <span class="block">I enjoy turning complex problems into simple, useful software.</span>
         </p>
 
         <!-- CTA -->
-        <div class="hero-fade mt-10 flex flex-wrap items-center gap-4">
+        <div
+          class="hero-fade mt-10 flex flex-wrap items-center gap-4"
+        >
 
           <!-- Primary CTA -->
           <a
@@ -181,10 +178,11 @@ import SkillsList from "../React/SkillsList.tsx";
                 class="size-[18px]"
               >
                 <path
-                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
+                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a1.999 1.999 0 0 0-3.27-1.64"
                 />
               </svg>
             </a>
+
           </div>
         </div>
 
@@ -194,7 +192,9 @@ import SkillsList from "../React/SkillsList.tsx";
         >
           <div>
             <p class="text-xl font-semibold text-white">Code</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30">
+            <p
+              class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30"
+            >
               Build & ship
             </p>
           </div>
@@ -203,7 +203,9 @@ import SkillsList from "../React/SkillsList.tsx";
 
           <div>
             <p class="text-xl font-semibold text-white">Systems</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30">
+            <p
+              class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30"
+            >
               Think deeper
             </p>
           </div>
@@ -212,7 +214,9 @@ import SkillsList from "../React/SkillsList.tsx";
 
           <div>
             <p class="text-xl font-semibold text-white">Ideas</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30">
+            <p
+              class="mt-1 text-xs uppercase tracking-[0.18em] text-white/30"
+            >
               Create freely
             </p>
           </div>
@@ -245,7 +249,7 @@ import SkillsList from "../React/SkillsList.tsx";
         >
           <!-- Inner border -->
           <div
-            class="pointer-events-none absolute inset-2 rounded-[1.65rem] border border-white/[0.07] z-20"
+            class="pointer-events-none absolute inset-2 z-20 rounded-[1.65rem] border border-white/[0.07]"
           ></div>
 
           <!-- Top gradient -->
@@ -254,7 +258,9 @@ import SkillsList from "../React/SkillsList.tsx";
           ></div>
 
           <!-- Glitch -->
-          <div class="relative h-full w-full overflow-hidden rounded-[1.7rem]">
+          <div
+            class="relative h-full w-full overflow-hidden rounded-[1.7rem]"
+          >
             <LetterGlitch
               client:load
               glitchColors={["#270d6d", "#1f0b81", "#241a38"]}
@@ -281,7 +287,9 @@ import SkillsList from "../React/SkillsList.tsx";
           <div
             class="absolute right-6 top-6 z-30 flex items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.15em] text-white/40 backdrop-blur-xl"
           >
-            <span class="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
+            <span
+              class="h-1.5 w-1.5 rounded-full bg-purple-400"
+            ></span>
             online
           </div>
         </div>
@@ -299,6 +307,7 @@ import SkillsList from "../React/SkillsList.tsx";
       ></div>
 
       <div class="relative">
+
         <div
           class="mb-8 flex flex-col items-center justify-between gap-3 sm:flex-row"
         >
@@ -335,7 +344,9 @@ import SkillsList from "../React/SkillsList.tsx";
         <div
           class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-purple-300/70"
         >
-          <span class="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-purple-400"
+          ></span>
           Skills & tools
         </div>
 
@@ -349,11 +360,12 @@ import SkillsList from "../React/SkillsList.tsx";
         <p
           class="mt-6 max-w-lg text-base leading-8 text-white/40"
         >
-          A collection of technologies, tools and concepts I've been
-          exploring throughout my development journey.
+          A collection of technologies, tools and concepts I've been exploring throughout my development journey.
         </p>
 
-        <div class="mt-8 flex items-center gap-3 text-xs text-white/25">
+        <div
+          class="mt-8 flex items-center gap-3 text-xs text-white/25"
+        >
           <span class="h-px w-8 bg-purple-400/40"></span>
           <span>Always learning. Always building.</span>
         </div>
@@ -385,6 +397,7 @@ import SkillsList from "../React/SkillsList.tsx";
       ></div>
 
       <div class="relative">
+
         <p
           class="text-xs font-semibold uppercase tracking-[0.3em] text-white/25"
         >
@@ -423,7 +436,7 @@ import SkillsList from "../React/SkillsList.tsx";
   </div>
 </section>
 
-<style is="global">
+<style is:global>
   /* =========================================================
      GRID
   ========================================================== */
@@ -489,11 +502,8 @@ import SkillsList from "../React/SkillsList.tsx";
 
   .social-link:hover {
     color: white;
-
     background: rgba(255, 255, 255, 0.075);
-
     border-color: rgba(255, 255, 255, 0.18);
-
     transform: translateY(-3px);
 
     box-shadow:
@@ -543,7 +553,7 @@ import SkillsList from "../React/SkillsList.tsx";
 
   .glitch-card {
     transition:
-      transform 500ms cubic-bezier(.2,.8,.2,1),
+      transform 500ms cubic-bezier(.2, .8, .2, 1),
       border-color 500ms ease,
       box-shadow 500ms ease;
   }
@@ -563,7 +573,7 @@ import SkillsList from "../React/SkillsList.tsx";
   ========================================================== */
 
   .hero-fade {
-    animation: heroFade 800ms cubic-bezier(.2,.8,.2,1) both;
+    animation: heroFade 800ms cubic-bezier(.2, .8, .2, 1) both;
   }
 
   .hero-fade:nth-child(2) {
