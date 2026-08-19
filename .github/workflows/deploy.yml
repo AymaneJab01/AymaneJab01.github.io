@@ -22,18 +22,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ---------------------------------------------------------
       # Checkout
+      # ---------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      # Setup pnpm FIRST
+      # ---------------------------------------------------------
+      # Setup pnpm
+      # Reads pnpm@9.15.0 from package.json
+      # ---------------------------------------------------------
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
           run_install: false
 
-      # Setup Node.js SECOND
+      # ---------------------------------------------------------
+      # Setup Node.js
+      # ---------------------------------------------------------
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
@@ -41,19 +47,27 @@ jobs:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
 
+      # ---------------------------------------------------------
       # Install dependencies
+      # ---------------------------------------------------------
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # ---------------------------------------------------------
       # Build Astro
+      # ---------------------------------------------------------
       - name: Build Astro site
         run: pnpm run build
 
+      # ---------------------------------------------------------
       # Configure GitHub Pages
+      # ---------------------------------------------------------
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # ---------------------------------------------------------
       # Upload Astro dist folder
+      # ---------------------------------------------------------
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
