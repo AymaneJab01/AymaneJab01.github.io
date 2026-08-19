@@ -29,15 +29,6 @@ jobs:
         uses: actions/checkout@v7
 
       # ---------------------------------------------------------
-      # Setup pnpm
-      # Reads pnpm@9.15.0 from package.json
-      # ---------------------------------------------------------
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      # ---------------------------------------------------------
       # Setup Node.js
       # ---------------------------------------------------------
       - name: Setup Node.js
@@ -46,6 +37,24 @@ jobs:
           node-version: 22
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
+
+      # ---------------------------------------------------------
+      # Enable Corepack
+      # ---------------------------------------------------------
+      - name: Enable Corepack
+        run: corepack enable
+
+      # ---------------------------------------------------------
+      # Activate pnpm 9.15.0
+      # ---------------------------------------------------------
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.15.0 --activate
+
+      # ---------------------------------------------------------
+      # Verify pnpm
+      # ---------------------------------------------------------
+      - name: Check pnpm
+        run: pnpm --version
 
       # ---------------------------------------------------------
       # Install dependencies
